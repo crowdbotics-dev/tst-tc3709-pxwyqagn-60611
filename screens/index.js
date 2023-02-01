@@ -1,21 +1,11 @@
 import React from "react";
-import {
-  Text,
-  StyleSheet,
-  View,
-  Image,
-  TouchableHighlight
-} from "react-native";
+import { Text, StyleSheet, View, Image, TouchableHighlight } from "react-native";
 
-const OnboardingChooseIndustryScreen = (params) => {
-  return (
-    <View style={styles.container}>
+const OnboardingChooseIndustryScreen = params => {
+  return <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require(// @ts-ignore
-            "./assets/back.png")}
-          style={styles.back}
-        />
+        <Image source={require( // @ts-ignore
+      "./assets/back.png")} style={styles.back} />
         <Text style={styles.heading}>Onboarding</Text>
         <Text />
       </View>
@@ -38,8 +28,7 @@ const OnboardingChooseIndustryScreen = (params) => {
       <View style={styles.buttonContainer}>
         <Button>Next</Button>
       </View>
-    </View>
-  );
+    </View>;
 };
 
 const styles = StyleSheet.create({
@@ -56,8 +45,16 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 40
   },
-  back: { width: 11.25, height: 20, resizeMode: "contain", marginLeft: -15 },
-  heading: { fontSize: 16, color: "#000" },
+  back: {
+    width: 11.25,
+    height: 20,
+    resizeMode: "contain",
+    marginLeft: -15
+  },
+  heading: {
+    fontSize: 16,
+    color: "#000"
+  },
   mr10: {
     marginLeft: 25,
     marginBottom: 10
@@ -75,7 +72,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     marginBottom: 20
   },
-  nextImg: { width: 11, height: 20, resizeMode: "contain" },
+  nextImg: {
+    width: 11,
+    height: 20,
+    resizeMode: "contain"
+  },
   buttonContainer: {
     justifyContent: "center",
     alignItems: "center",
@@ -86,33 +87,21 @@ const styles = StyleSheet.create({
   }
 });
 
-const Button = (props) => {
-  return (
-    <TouchableHighlight onPress={props.onPress} underlayColor="#DDDDDD">
-      <View
-        style={[
-          btnStyles.button,
-          {
-            backgroundColor: props.backgroundColor
-              ? props.backgroundColor
-              : "#000000",
-            height: props.height ? props.height : 49,
-            borderWidth: props.borderWidth ? props.borderWidth : 0,
-            borderColor: props.borderColor ? props.borderColor : "#000000"
-          }
-        ]}
-      >
-        <Text
-          style={[
-            btnStyles.text,
-            { color: props.color ? props.color : "#ffffff" }
-          ]}
-        >
+const Button = props => {
+  return <TouchableHighlight onPress={props.onPress} underlayColor="#DDDDDD">
+      <View style={[btnStyles.button, {
+      backgroundColor: props.backgroundColor ? props.backgroundColor : "#000000",
+      height: props.height ? props.height : 49,
+      borderWidth: props.borderWidth ? props.borderWidth : 0,
+      borderColor: props.borderColor ? props.borderColor : "#000000"
+    }]}>
+        <Text style={[btnStyles.text, {
+        color: props.color ? props.color : "#ffffff"
+      }]}>
           {props.children}
         </Text>
       </View>
-    </TouchableHighlight>
-  );
+    </TouchableHighlight>;
 };
 
 const btnStyles = StyleSheet.create({
